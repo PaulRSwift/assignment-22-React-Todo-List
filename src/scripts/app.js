@@ -36,7 +36,7 @@ getInitialState: function(){
         if( currentInput.length > 0  ) {
 
             newTaskObj = {
-               text: currentInput,
+               text: currentInput, 
                completed:false
             }
             let newState = this.state
