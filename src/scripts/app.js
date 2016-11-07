@@ -3,7 +3,7 @@ const ReactDOM = require('react-dom');
 const React = require('react');
 
 
-document.querySelector('#app-container').innerHTML = `<h1>YOLO</h1>`
+document.querySelector('.container').innerHTML = `<h1>YOLO</h1>`
 
 /* Data structure
 todos: [
@@ -36,7 +36,7 @@ getInitialState: function(){
         if( currentInput.length > 0  ) {
 
             newTaskObj = {
-               text: currentInput, 
+               text: currentInput,
                completed:false
             }
             let newState = this.state
@@ -69,14 +69,14 @@ getInitialState: function(){
    render: function(){
       var self = this
       let list = this.state.todos.map(function(todo, i){
-         return <li key={i}>{todo.text}<button onClick={self._removeTask}>X</button></li>
+         return <li key={i}>{todo.text}<button className= "removeBtn" onClick={self._removeTask}>X</button></li>
       })
 
       return (
          <div className="container text-center">
-            <button className="btn btn-info btn-lg" > All</button>
-            <button className="btn btn-info btn-lg" > Done</button>
-            <button className="btn btn-info btn-lg" > Undone</button>
+            <button className="btn btn-info myBtn" > All</button>
+            <button className="btn btn-info myBtn" > Done</button>
+            <button className="btn btn-info myBtn" > Undone</button>
                <br/>
             <input type="text" className="form-control input-group-lg" ref="taskInputEl" onKeyDown={this._handleKeyDown} placeholder="" aria-describedby="basic-addon1"/>
 
@@ -95,4 +95,4 @@ getInitialState: function(){
 
 
 
-ReactDOM.render(<HomeView/>, document.querySelector('#app-container'))
+ReactDOM.render(<HomeView/>, document.querySelector('.container'))
